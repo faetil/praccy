@@ -11,14 +11,22 @@
 <p>
     <strong>Assessment Count:</strong>
     <%= @people.assessment_count %>
-
-    <h2>organisation</h2>
-    <%= form_with(model: [@people, @people.organisations.build ],local: true) do |form| %>
+</p>
     <p>
-        <%= form.label :title %><br>
-        <%= form.text_field :title %>
+        <strong>Organisation ID:</strong>
+        <%= @people.organisation_id %>
     </p>
 
+    <h2>organisation</h2>
+   
+    <p>
+       <strong>Title:</strong>
+       <%= @people.organisation.title %>
+    </p>
+    <p>
+        <strong>Location:</strong>
+        <%= @people.organisation.location %>
+    </p>
+    
 <%= link_to  "back", people_path %>
 <%= link_to  "edit", edit_person_path(@people) %>
-<% end %>

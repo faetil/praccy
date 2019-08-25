@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :controllers
-  get 'organisations/index'
-  get 'organisations/delete'
+
   root to: 'people#index'
   resources :people do
     resources :organisations

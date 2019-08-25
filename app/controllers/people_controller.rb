@@ -4,14 +4,15 @@ class PeopleController < ApplicationController
   end
   def new
     @people = Person.new
+    # @people.organisations.new
   end
   def create
     @people = Person.new(params[:id])
-    @organisation = @person.organisations.create(organisations_params)
+    @organisations = Organisation.new(params[:id])
     
 
     if @people.save
-      redirect_to people_path, notice: 'successfully created'
+      redirect_to @people, notice: 'successfully created'
     else
       render 'new'
     end
@@ -46,7 +47,6 @@ end
 
   private
   def people_params
-    params.require(:people).require(:first_name, :last_name,:location, :title, :assessment_count,
-       :search)
+   params.require(:people).permit(:search, :first_name, :last_name)
   end 
 end

@@ -1,5 +1,24 @@
 <h1>Edit Person</h1>
 
-<%= render 'form' %>
+<%= form_with(model: @people, local: true) do |f| %>
 
-<%= link_to  'back', people_path %>
+<p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+</p>
+<p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+</p>
+<p>
+    <%= f.label :assessment_count %><br>
+    <%= f.text_field :assessment_count %>
+</p>
+
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
+
+

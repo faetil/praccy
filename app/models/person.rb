@@ -1,4 +1,5 @@
 class Person < ApplicationRecord
+  
   belongs_to :organisation
 
   def self.search(search)
